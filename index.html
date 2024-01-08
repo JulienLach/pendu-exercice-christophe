@@ -6,29 +6,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <title>Le jeu du pendu</title>
+    <title>Jeu du pendu JavaScript</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="header">
-        <h1>Jeu du pendu</h1>
-    </div>
-    <div class="container">
-        <h3>Trouver le mot : <span id="motChoisi"></span></h3>
-    </div>
-    <div>
-        <p>Coups restants : <span id="coups-restants"></span> </p>
-    </div>
+    <div class="main">
+        <div class="header">
+            <h1>Jeu du pendu JavaScript</h1>
+        </div>
+        <div class="container">
+            <h3>Trouver le mot : <span id="motChoisi"></span></h3>
+        </div>
+        <div>
+            <p>Coups restants : <span id="coups-restants"></span> </p>
+        </div>
 
-    <div class="lettres">
-        <label for="lettre"></label>
-        <input type="text" id="lettre" maxlength="1">
-        <button onclick="testerLettres()">Valider</button>
-    </div>
+        <div class="lettres">
+            <label for="lettre"></label>
+            <input type="text" id="lettre" maxlength="1">
+            <button onclick="testerLettres()">Valider</button>
+        </div>
 
-    <div>
-        <button class="restart">Recommencer</button>
+        <div>
+            <button id="recommencer">Recommencer</button>
+        </div>
     </div>
 
 </body>
