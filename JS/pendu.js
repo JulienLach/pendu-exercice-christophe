@@ -25,10 +25,10 @@ function testerLettres() {
   const lettreTeste = lettreInput.value.toLocaleLowerCase(); // prendre la valeur du input
   console.log(lettreTeste);
 
-  // vérifier si la lettre testée est inclue dans le mot choisi
+  // Vérifier si la lettre testée est inclue dans le mot choisi
   if (motChoisi.includes(lettreTeste)) {
-    // mettre à jour le array lettres avec les lettreTese trouvées
-    for (let i = 0; i < motChoisi.length; i++) { // boucle for pour parcourir les lettre du motChoisi
+    // Mettre à jour le array lettres avec les lettreTeste trouvées
+    for (let i = 0; i < motChoisi.length; i++) { // boucle for pour parcourir les lettres du motChoisi
       if (motChoisi[i] === lettreTeste) { // si la lettre testé est égale à une lettre dans le array des lettres du mot choisi
         lettres[i] = lettreTeste // la lettre égale prend la valeur de la lettre testé et remplace le " _ "
       }
@@ -52,7 +52,7 @@ function testerLettres() {
   // Mettre à jour l'affichage du motChoisi en rappelant la fonction afficherLeMotChoisi()
   // après la boucle de teste des lettres
   afficherLeMotChoisi();
-  // vider l'input de lettre
+  // Vider l'input de lettre
   lettreInput.value = ""
 }
 
