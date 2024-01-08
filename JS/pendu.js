@@ -1,159 +1,23 @@
-/*               Le Jeu du Pendu
 
-rappel des règles
 
-un mots est tiré au sort
-les lettres du mots sont masquées et remplacées par un _
-le joueur possède un nombre de coups limités (erreurs)
 
-à chaque tour :
-  l'utiisateur choisi une lettre
-  si cette lettre est dans le mot
-    alors la lettre est affichée à ses places dans le mot
-    sinon le nombre de coups est décrémenté
+// Fonction mot à deviner
+const motADeviner = "Test"
+const motADevinerElement = document.getElementById("motADeviner")
+const motADevinerCache = motADeviner.split("").map(() => " _ ");
+motADevinerElement.innerHTML = motADevinerCache
 
-le joueur gagne s'il découvre entièrement le mot
-le joueur perd si sont nombre de coups arrive à 0
 
-implémentez ce jeu en javascript, HTML, CSS
 
-*/
+// Fonction coups restants
+let coupsRestant = 10
+const coupsRestantElement = document.getElementById("coups-restants")
+coupsRestantElement.innerHTML = coupsRestant
+const buttonsLetter = document.querySelectorAll(".btn-letter");
 
-//voici le tableau des mots pour le jeu du pendu
-const mots = [
-    "anticyclone",
-    "aquarium",
-    "bibliotheque",
-    "catastrophe",
-    "chateau",
-    "constitution",
-    "democratie",
-    "economie",
-    "electronique",
-    "emigration",
-    "equation",
-    "explication",
-    "exploration",
-    "fabrication",
-    "feodalite",
-    "genealogie",
-    "geographie",
-    "geologie",
-    "histoire",
-    "horloge",
-    "industrie",
-    "informatique",
-    "ingenierie",
-    "institution",
-    "international",
-    "interpretation",
-    "invention",
-    "irregularite",
-    "legislation",
-    "linguistique",
-    "machine",
-    "magnetisme",
-    "mecanique",
-    "medecine",
-    "medecine",
-    "metallurgie",
-    "meteorologie",
-    "mouvement",
-    "musique",
-    "nationalite",
-    "necessite",
-    "observation",
-    "organisation",
-    "orthographe",
-    "philosophie",
-    "physique",
-    "politique",
-    "population",
-    "prehistoire",
-    "psychologie",
-    "quantite",
-    "radioactivite",
-    "reaction",
-    "realite",
-    "republique",
-    "resolution",
-    "resurrection",
-    "revolution",
-    "science",
-    "societe",
-    "souvenir",
-    "specificite",
-    "temperature",
-    "technologie",
-    "television",
-    "theorie",
-    "thermodynamique",
-    "universite",
-    "vulgarisation",
-    "vehicule",
-    "violence",
-    "abolition",
-    "abstraction",
-    "academie",
-    "accident",
-    "acclamation",
-    "accumulation",
-    "acquisition",
-    "activite",
-    "adjacent",
-    "administration",
-    "admiration",
-    "admission",
-    "adoption",
-    "adolescence",
-    "adversaire",
-    "adversite",
-    "affirmation",
-    "agitation",
-    "agriculture",
-    "aiguille",
-    "algebre",
-    "aliment",
-    "allocation",
-    "alphabet",
-    "altitude",
-    "amoureux",
-    "analyse",
-    "anatomie",
-    "ancetre",
-    "analogie",
-    "anarchie",
-    "animalite",
-    "animation",
-    "anonymat",
-    "anthropologie",
-    "antipathie",
-    "apparition",
-    "application",
-    "applique",
-    "approbation",
-    "appreciation",
-    "apprehension",
-    "appropriation",
-    "arbitre",
-    "argument",
-    "arithmetique",
-    "ascension",
-    "assurance",
-    "ascenseur",
-    "aspiration",
-    "association",
-    "assiette",
-    "assistance",
-    "assurance",
-    "attaque",
-    "attention",
-    "attraction",
-    "attribut",
-    "audience",
-    "augmentation",
-    "autodidacte",
-    "automobile",
-    "automne",
-    "aventure",
-];
+buttonsLetter.forEach(function (button) {
+  button.addEventListener("click", function () {
+    coupsRestant = coupsRestant - 1;
+    coupsRestantElement.innerHTML = coupsRestant;
+  });
+});
