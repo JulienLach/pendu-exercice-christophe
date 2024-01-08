@@ -33,16 +33,15 @@ function testerLettres() {
         lettres[i] = lettreTeste // la lettre égale prend la valeur de la lettre testé et remplace le " _ "
       }
     }
-    // Check if the word is completely guessed
+    // Vérifier dans le premier if si toutes les lettres ont été trouvées
     if (!lettres.includes(' _ ')) { // si le array lettre ne contient plus de " _ " alors afficher gagné
       document.querySelector(".main").innerHTML = `<div class="perdu-header">GAGNÉ</div><div>
         <button id="recommencer" onclick="location.reload()">Recommencer</button>
       </div>`;
     }
-  } else {
-    // Incorrect guess
-    coupsRestant--;
-    coupsRestantElement.textContent = coupsRestant
+  } else { // else si la lettre testée n'est pas bonne
+    coupsRestant--; // retirer un coup restant
+    coupsRestantElement.textContent = coupsRestant // mettre à jour l'affichage des coups restants
 
     if (coupsRestant === 0) { // si nombre de coups === 0 alors afficher perdu
       document.querySelector(".main").innerHTML = `<div class="perdu-header">PERDU</div><div>
@@ -50,9 +49,8 @@ function testerLettres() {
       </div>`;
     }
   }
-
-  // Mettre à jour le motChoisi en rappelant la fonction afficher le mot
-  // une fois que l'on a fait tourner la boucle de teste des lettres
+  // Mettre à jour l'affichage du motChoisi en rappelant la fonction afficherLeMotChoisi()
+  // après la boucle de teste des lettres
   afficherLeMotChoisi();
   // vider l'input de lettre
   lettreInput.value = ""
