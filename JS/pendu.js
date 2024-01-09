@@ -54,6 +54,7 @@ function testerLettres() {
   afficherLeMotChoisi();
   // Vider l'input de lettre
   lettreInput.value = ""
+  lettreInput.focus() // remettre le focus sur l'input après chaque teste de lettre
 }
 
 // Fonction boutton recommencer
